@@ -1,0 +1,316 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:{staff_num}",
+ "creation": "2024-11-23 22:41:27.431448",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_data_tab",
+  "section_break_ocdh",
+  "staff_num",
+  "column_break_nbjq",
+  "column_break_bici",
+  "column_break_dkmb",
+  "column_break_kibd",
+  "section_break_fumu",
+  "emp_img",
+  "section_break_zbjd",
+  "emp_name",
+  "column_break_zrdn",
+  "section_break_strg",
+  "1st_emp_name",
+  "column_break_uslx",
+  "2nd_emp_name",
+  "column_break_pdsp",
+  "3rd_emp_name",
+  "column_break_nimz",
+  "4th_emp_name",
+  "column_break_aklj",
+  "column_break_qaax",
+  "section_break_kwjg",
+  "birthdate",
+  "column_break_hacy",
+  "join_date",
+  "column_break_eaib",
+  "salutation",
+  "column_break_ucjk",
+  "marital_status",
+  "financial_data_tab",
+  "payment_details_section",
+  "currency",
+  "column_break_tule",
+  "emp_bank",
+  "emp_bank_account_number",
+  "column_break_hvdq",
+  "column_break_mavs",
+  "salary_items_section",
+  "basic_salary",
+  "contract_tab",
+  "personal_contacts_section",
+  "table_gwbc",
+  "section_break_ymhz",
+  "addresses_table",
+  "section_break_xfvv",
+  "table_sbdj"
+ ],
+ "fields": [
+  {
+   "fieldname": "staff_num",
+   "fieldtype": "Data",
+   "label": "Staff Num",
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "1st_emp_name",
+   "fieldtype": "Data",
+   "label": "1st Name",
+   "translatable": 1
+  },
+  {
+   "fieldname": "2nd_emp_name",
+   "fieldtype": "Data",
+   "label": "2nd Name",
+   "translatable": 1
+  },
+  {
+   "fieldname": "3rd_emp_name",
+   "fieldtype": "Data",
+   "label": "3rd Name",
+   "translatable": 1
+  },
+  {
+   "fieldname": "4th_emp_name",
+   "fieldtype": "Data",
+   "label": "4th Name",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_uslx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pdsp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_nimz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aklj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_strg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qaax",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ocdh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nbjq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bici",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dkmb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kibd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kwjg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "birthdate",
+   "fieldtype": "Date",
+   "label": "Birthdate"
+  },
+  {
+   "fieldname": "column_break_eaib",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ucjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "financial_data_tab",
+   "fieldtype": "Tab Break",
+   "label": "Financial Data"
+  },
+  {
+   "fieldname": "basic_salary",
+   "fieldtype": "Int",
+   "label": "Basic Salary",
+   "precision": "2"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Currency",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "column_break_hacy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "basic_data_tab",
+   "fieldtype": "Tab Break",
+   "label": "Basic Data"
+  },
+  {
+   "fieldname": "salary_items_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.payment_type == 'Bank'",
+   "fieldname": "emp_bank",
+   "fieldtype": "Data",
+   "label": "Bank"
+  },
+  {
+   "fieldname": "column_break_tule",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hvdq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.payment_type == 'Bank Transfer'",
+   "fieldname": "emp_bank_account_number",
+   "fieldtype": "Int",
+   "label": "Bank Account Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "column_break_mavs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "join_date",
+   "fieldtype": "Date",
+   "label": "Join Date"
+  },
+  {
+   "fieldname": "salutation",
+   "fieldtype": "Data",
+   "label": "Salutation"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Data",
+   "label": "Marital Status"
+  },
+  {
+   "fieldname": "contract_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contacts & Address"
+  },
+  {
+   "fieldname": "section_break_zbjd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zrdn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fumu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "emp_img",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Employee Image"
+  },
+  {
+   "fieldname": "emp_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "table_gwbc",
+   "fieldtype": "Table",
+   "label": "Personal Contacts",
+   "options": "Emp Contacts"
+  },
+  {
+   "fieldname": "personal_contacts_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ymhz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_sbdj",
+   "fieldtype": "Table",
+   "label": "Emergency Contacts ",
+   "options": "Emergence Contacts"
+  },
+  {
+   "fieldname": "section_break_xfvv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "addresses_table",
+   "fieldtype": "Table",
+   "label": "Addresses",
+   "options": "Employee Addresses"
+  }
+ ],
+ "image_field": "emp_img",
+ "links": [],
+ "max_attachments": 1,
+ "modified": "2024-11-25 00:08:03.941067",
+ "modified_by": "Administrator",
+ "module": "Personnel",
+ "name": "Employee",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "staff_num",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "emp_name",
+ "track_changes": 1,
+ "translated_doctype": 1
+}

@@ -1,0 +1,196 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{###}",
+ "creation": "2024-11-12 22:45:44.046665",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "status_tab",
+  "section_break_a",
+  "column_break_aa",
+  "structure",
+  "structure_level",
+  "parent_structure",
+  "column_break_flhq",
+  "abbreviation",
+  "company_logo",
+  "structure_level_id",
+  "column_break_ab",
+  "is_group",
+  "lft",
+  "rgt",
+  "old_parent",
+  "section_break_txuo",
+  "active",
+  "enabled_date",
+  "disabled_date",
+  "column_break_afby",
+  "column_break_esns"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_aa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "structure_level",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Structure Level",
+   "link_filters": "[[\"Structure Level\",\"active\",\"=\",1]]",
+   "options": "Structure Level"
+  },
+  {
+   "fieldname": "column_break_ab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "the status changes automatically based on the below dates",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "enabled_date",
+   "fieldtype": "Date",
+   "label": "Enabled Date"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "disabled_date",
+   "fieldtype": "Date",
+   "label": "Disabled Date"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "structure",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Structure",
+   "translatable": 1
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "Structure"
+  },
+  {
+   "fieldname": "parent_structure",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent",
+   "options": "Structure"
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "section_break_txuo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_afby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_esns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "structure_level.name",
+   "fieldname": "structure_level_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Structure Level ID"
+  },
+  {
+   "depends_on": "eval:doc.structure_level === \"001\"",
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "column_break_flhq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Abbreviation"
+  }
+ ],
+ "hide_toolbar": 1,
+ "image_field": "company_logo",
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2024-11-22 21:29:36.808581",
+ "modified_by": "Administrator",
+ "module": "Structure Configuration",
+ "name": "Structure",
+ "naming_rule": "Expression",
+ "nsm_parent_field": "parent_structure",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "import": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "name",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "structure",
+ "translated_doctype": 1
+}

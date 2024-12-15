@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:{###}",
+ "creation": "2024-11-10 23:41:00.635906",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bphq",
+  "structure_level",
+  "column_break_suiw",
+  "column_break_comv",
+  "record_status_section",
+  "column_break_avdy",
+  "active",
+  "enabled_date",
+  "disabled_date",
+  "column_break_ekbb",
+  "column_break_tfaw"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "structure_level",
+   "fieldtype": "Data",
+   "label": "Structure Level",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_suiw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_avdy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "record_status_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ekbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tfaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bphq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_comv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "disabled_date",
+   "fieldtype": "Date",
+   "label": "Disabled Date"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "enabled_date",
+   "fieldtype": "Date",
+   "label": "Enabled Date"
+  },
+  {
+   "default": "0",
+   "description": "the status changes automatically based on the below dates",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-17 21:36:07.176788",
+ "modified_by": "Administrator",
+ "module": "Structure Configuration",
+ "name": "Structure Level",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "import": 1,
+   "read": 1,
+   "report": 1,
+   "role": "admin",
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "name",
+ "sort_order": "ASC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "1"
+  }
+ ],
+ "title_field": "structure_level",
+ "translated_doctype": 1
+}
