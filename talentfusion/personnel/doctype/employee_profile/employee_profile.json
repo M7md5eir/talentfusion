@@ -248,7 +248,8 @@
   {
    "fieldname": "emp_name",
    "fieldtype": "Data",
-   "label": "Employee Name"
+   "label": "Employee Name",
+   "read_only": 1
   },
   {
    "fieldname": "table_gwbc",
@@ -284,10 +285,10 @@
  "image_field": "emp_img",
  "links": [],
  "max_attachments": 1,
- "modified": "2024-11-25 00:08:03.941067",
+ "modified": "2025-07-20 17:57:28.303491",
  "modified_by": "Administrator",
  "module": "Personnel",
- "name": "Employee",
+ "name": "Employee Profile",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -306,6 +307,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "staff_num",
  "sort_order": "ASC",
