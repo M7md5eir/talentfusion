@@ -1,26 +1,36 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-20 19:04:50.035189",
+ "autoname": "format:{#######}",
+ "creation": "2025-07-19 03:51:56.942098",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "1"
+  "province",
+  "country"
  ],
  "fields": [
   {
-   "fieldname": "1",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "province",
    "fieldtype": "Data",
-   "label": "1"
+   "label": "Province",
+   "translatable": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-20 19:05:04.665981",
+ "modified": "2025-07-19 17:03:51.341919",
  "modified_by": "Administrator",
- "module": "Personnel",
- "name": "province",
+ "module": "Others",
+ "name": "Province",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -37,7 +47,10 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "province",
+ "translated_doctype": 1
 }
