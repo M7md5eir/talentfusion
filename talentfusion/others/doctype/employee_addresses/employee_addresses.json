@@ -106,8 +106,9 @@
    "default": "0",
    "fieldname": "active",
    "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Active"
+   "in_list_view": 0,
+   "label": "Active",
+   "read_only": 1
   }
  ],
  "grid_page_length": 10,
