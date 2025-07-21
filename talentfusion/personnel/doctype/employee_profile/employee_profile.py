@@ -1,6 +1,3 @@
-# Copyright (c) 2024, Mohamed Kheir and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.model.document import Document
 
@@ -41,7 +38,7 @@ class EmployeeProfile(Document):
             return ""
         return frappe.db.get_value("Translation", {
             "source_text": source_text,
-            "lang": lang
+            "language": lang  # <-- fixed field name here
         }, "translated_text")
 
     def save_full_name_translation(self, source_text, translated_text):
@@ -50,22 +47,22 @@ class EmployeeProfile(Document):
 
         existing = frappe.db.get_value("Translation", {
             "source_text": source_text,
-            "lang": "ar",
+            "language": "ar",  # <-- fixed field name here
             "context": "Employee Profile Name"
         }, "name")
 
         if existing:
-            # Update if needed
+            # Update existing translation if changed
             tr_doc = frappe.get_doc("Translation", existing)
             if tr_doc.translated_text != translated_text:
                 tr_doc.translated_text = translated_text
                 tr_doc.save(ignore_permissions=True)
         else:
-            # Create new
+            # Create new translation
             frappe.get_doc({
                 "doctype": "Translation",
                 "source_text": source_text,
                 "translated_text": translated_text,
-                "lang": "ar",
+                "language": "ar",  # <-- fixed field name here
                 "context": "Employee Profile Name"
             }).insert(ignore_permissions=True)
