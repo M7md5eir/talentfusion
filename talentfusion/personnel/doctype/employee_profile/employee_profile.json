@@ -10,12 +10,11 @@
   "basic_data_tab",
   "section_break_ocdh",
   "staff_num",
+  "emp_img",
   "column_break_nbjq",
   "column_break_bici",
   "column_break_dkmb",
   "column_break_kibd",
-  "section_break_fumu",
-  "emp_img",
   "section_break_zbjd",
   "emp_name",
   "column_break_zrdn",
@@ -37,6 +36,8 @@
   "salutation",
   "column_break_ucjk",
   "marital_status",
+  "column_break_hwla",
+  "gender",
   "financial_data_tab",
   "payment_details_section",
   "currency",
@@ -48,10 +49,10 @@
   "salary_items_section",
   "basic_salary",
   "contract_tab",
-  "personal_contacts_section",
-  "table_gwbc",
   "section_break_ymhz",
   "addresses_table",
+  "personal_contacts_section",
+  "table_gwbc",
   "section_break_xfvv",
   "table_sbdj"
  ],
@@ -59,6 +60,8 @@
   {
    "fieldname": "staff_num",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
    "label": "Staff Num",
    "set_only_once": 1,
    "unique": 1
@@ -236,20 +239,17 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_fumu",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "emp_img",
    "fieldtype": "Attach Image",
-   "hidden": 1,
    "label": "Employee Image"
   },
   {
    "fieldname": "emp_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Employee Name",
-   "read_only": 1
+   "read_only": 1,
+   "translatable": 1
   },
   {
    "fieldname": "table_gwbc",
@@ -280,12 +280,21 @@
    "fieldtype": "Table",
    "label": "Addresses",
    "options": "Employee Addresses"
+  },
+  {
+   "fieldname": "column_break_hwla",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
   }
  ],
+ "hide_toolbar": 1,
  "image_field": "emp_img",
  "links": [],
- "max_attachments": 1,
- "modified": "2025-07-20 19:01:19.693641",
+ "modified": "2025-07-20 11:03:33.770206",
  "modified_by": "Administrator",
  "module": "Personnel",
  "name": "Employee Profile",
@@ -313,6 +322,5 @@
  "sort_order": "ASC",
  "states": [],
  "title_field": "emp_name",
- "track_changes": 1,
  "translated_doctype": 1
 }
