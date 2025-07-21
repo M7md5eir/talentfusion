@@ -4,66 +4,47 @@ from frappe.model.document import Document
 class EmployeeProfile(Document):
 
     def validate(self):
-        # Step 1: Compose the English full name
-        name_parts = [
-            self.get("1st_emp_name"),
-            self.get("2nd_emp_name"),
-            self.get("3rd_emp_name"),
-            self.get("4th_emp_name")
-        ]
-        self.emp_name = self.join_names(*name_parts)
+        if self.is_new() or any(self.has_changed(f"{i}st_emp_name") for i in range(1, 5)):
+            self._update_emp_name_and_translation()
 
-        # Step 2: Compose the Arabic full name from available translations (leave blank if missing)
-        arabic_parts = []
-        for part in name_parts:
-            arabic = self.get_translation(part, lang="ar")
-            arabic_parts.append(arabic or "")  # leave empty if no translation found
+    def _update_emp_name_and_translation(self):
+        parts = [self.get(f"{i}st_emp_name") for i in range(1, 5)]
+        self.emp_name = self._join(parts)
+        arabic_parts = [self._get_translation(p) for p in parts]
+        full_arabic = self._join(arabic_parts)
+        self._save_translation(self.emp_name, full_arabic)
 
-        full_arabic_name = self.join_names(*arabic_parts)
+    def _join(self, parts):
+        return " ".join(p.strip() for p in parts if p).strip()
 
-        # Step 3: Save or update translation of full name, only if changed
-        self.save_full_name_translation(self.emp_name, full_arabic_name)
-
-    def remove_extra_spaces(self, text):
-        if not text:
-            return ""
-        return " ".join(text.strip().split())
-
-    def join_names(self, *args):
-        return " ".join([self.remove_extra_spaces(part) for part in args if part]).strip()
-
-    def get_translation(self, source_text, lang="ar"):
-        if not source_text:
+    def _get_translation(self, source):
+        if not source:
             return ""
         return frappe.db.get_value("Translation", {
-            "source_text": source_text,
-            "language": lang  # correct field name
-        }, "translated_text")
+            "source_text": source,
+            "language": "ar"
+        }, "translated_text") or ""
 
-    def save_full_name_translation(self, source_text, translated_text):
-        if not source_text:
+    def _save_translation(self, source, translated):
+        if not source:
             return
 
         existing = frappe.db.get_value("Translation", {
-            "source_text": source_text,
+            "source_text": source,
             "language": "ar",
             "context": "Employee Profile Name"
         }, ["name", "translated_text"], as_dict=True)
 
-        # If translation exists
         if existing:
-            if existing.translated_text != translated_text:
-                # Only update if translation has changed
-                tr_doc = frappe.get_doc("Translation", existing.name)
-                tr_doc.translated_text = translated_text
-                tr_doc.save(ignore_permissions=True)
-        else:
-            # Only create if there's a translation to save (skip if all parts were empty)
-            if translated_text.strip():
-                frappe.get_doc({
-                    "doctype": "Translation",
-                    "source_text": source_text,
-                    "translated_text": translated_text,
-                    "language": "ar",
-                    "context": "Employee Profile Name"
-                }).insert(ignore_permissions=True)
+            if existing.translated_text != translated:
+                doc = frappe.get_doc("Translation", existing.name)
+                doc.translated_text = translated
+                doc.save(ignore_permissions=True)
+        elif translated.strip():
+            frappe.get_doc({
+                "doctype": "Translation",
+                "source_text": source,
+                "translated_text": translated,
+                "language": "ar",
+                "context": "Employee Profile Name"
+            }).insert(ignore_permissions=True)
