@@ -1,43 +1,45 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "format:{staff_num}",
+ "autoname": "format:{emp_id}",
  "creation": "2024-11-23 22:41:27.431448",
  "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "basic_data_tab",
-  "section_break_ocdh",
-  "staff_num",
-  "emp_img",
-  "column_break_nbjq",
-  "column_break_bici",
-  "column_break_dkmb",
-  "column_break_kibd",
-  "section_break_zbjd",
+  "column_break_plhr",
+  "image_ifmw",
+  "column_break_heqj",
+  "emp_id",
   "emp_name",
-  "column_break_zrdn",
-  "section_break_strg",
-  "1st_emp_name",
-  "column_break_uslx",
-  "2nd_emp_name",
-  "column_break_pdsp",
-  "3rd_emp_name",
-  "column_break_nimz",
-  "4th_emp_name",
-  "column_break_aklj",
-  "column_break_qaax",
-  "section_break_kwjg",
-  "birthdate",
-  "column_break_hacy",
-  "join_date",
-  "column_break_eaib",
+  "column_break_jfds",
+  "emp_status",
+  "section_break_tutx",
+  "emp_img",
+  "column_break_opsa",
   "salutation",
-  "column_break_ucjk",
-  "marital_status",
-  "column_break_hwla",
+  "column_break_eugv",
+  "section_break_cfrn",
+  "column_break_rdrd",
+  "1st_emp_name",
+  "column_break_tegn",
+  "2nd_emp_name",
+  "column_break_lobw",
+  "3rd_emp_name",
+  "column_break_ijme",
+  "4th_emp_name",
+  "column_break_yvqf",
+  "column_break_owym",
+  "section_break_qzqe",
+  "column_break_uwnz",
   "gender",
+  "marital_status",
+  "birthdate",
+  "join_date",
+  "column_break_lxxp",
+  "column_break_xilh",
+  "column_break_ckml",
   "financial_data_tab",
   "payment_details_section",
   "currency",
@@ -57,15 +59,6 @@
   "table_sbdj"
  ],
  "fields": [
-  {
-   "fieldname": "staff_num",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "label": "Staff Num",
-   "set_only_once": 1,
-   "unique": 1
-  },
   {
    "fieldname": "1st_emp_name",
    "fieldtype": "Data",
@@ -91,65 +84,9 @@
    "translatable": 1
   },
   {
-   "fieldname": "column_break_uslx",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_pdsp",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_nimz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_aklj",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_strg",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_qaax",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_ocdh",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_nbjq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_bici",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_dkmb",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_kibd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_kwjg",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "birthdate",
    "fieldtype": "Date",
    "label": "Birthdate"
-  },
-  {
-   "fieldname": "column_break_eaib",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ucjk",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "financial_data_tab",
@@ -166,10 +103,6 @@
    "fieldname": "currency",
    "fieldtype": "Currency",
    "label": "Currency"
-  },
-  {
-   "fieldname": "column_break_hacy",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "basic_data_tab",
@@ -231,25 +164,17 @@
    "label": "Contacts & Address"
   },
   {
-   "fieldname": "section_break_zbjd",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_zrdn",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "emp_img",
    "fieldtype": "Attach Image",
-   "label": "Employee Image"
+   "label": "Employee IMG"
   },
   {
+   "bold": 1,
    "fieldname": "emp_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Employee Name",
-   "read_only": 1,
-   "translatable": 1
+   "read_only": 1
   },
   {
    "fieldname": "table_gwbc",
@@ -282,19 +207,108 @@
    "options": "Employee Addresses"
   },
   {
-   "fieldname": "column_break_hwla",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "gender",
    "fieldtype": "Data",
    "label": "Gender"
+  },
+  {
+   "fieldname": "image_ifmw",
+   "fieldtype": "Image"
+  },
+  {
+   "fieldname": "column_break_heqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_plhr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_opsa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tegn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rdrd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "emp_status",
+   "fieldtype": "Data",
+   "label": "Employee Status",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "emp_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Employee ID",
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_lxxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_owym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cfrn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_uwnz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jfds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tutx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_lobw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ijme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qzqe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xilh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yvqf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ckml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_eugv",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "image_field": "emp_img",
  "links": [],
- "modified": "2025-07-20 11:03:33.770206",
+ "modified": "2025-07-21 16:08:10.865741",
  "modified_by": "Administrator",
  "module": "Personnel",
  "name": "Employee Profile",
@@ -318,7 +332,7 @@
  ],
  "row_format": "Dynamic",
  "show_title_field_in_link": 1,
- "sort_field": "staff_num",
+ "sort_field": "emp_id",
  "sort_order": "ASC",
  "states": [],
  "title_field": "emp_name",
