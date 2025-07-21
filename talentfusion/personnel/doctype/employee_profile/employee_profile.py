@@ -4,8 +4,18 @@ from frappe.model.document import Document
 class EmployeeProfile(Document):
 
     def validate(self):
-        if self.is_new() or any(self.has_changed(f"{i}st_emp_name") for i in range(1, 5)):
+        before = self.get_doc_before_save()
+        if self.is_new() or self._name_parts_changed(before):
             self._update_emp_name_and_translation()
+
+    def _name_parts_changed(self, before):
+        if not before:
+            return True
+        for i in range(1, 5):
+            field = f"{i}st_emp_name"
+            if self.get(field) != before.get(field):
+                return True
+        return False
 
     def _update_emp_name_and_translation(self):
         parts = [self.get(f"{i}st_emp_name") for i in range(1, 5)]
