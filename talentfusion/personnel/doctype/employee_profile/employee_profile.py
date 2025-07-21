@@ -7,7 +7,6 @@ from frappe.model.document import Document
 class EmployeeProfile(Document):
 
     def validate(self):
-        # دالة جمع الأسماء
         self.emp_name = self.join_names(
             self.get("1st_emp_name"),
             self.get("2nd_emp_name"),
